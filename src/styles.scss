@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --primaryColor: hsl(185, 57%, 35%);
+  --secondaryColor: hsl(0, 0%, 22%);
+  --textOnPrimary: hsl(0, 0%, 100%);
+  --textOnSecondary: hsl(0, 0%, 90%);
+  --background: hsl(0, 0%, 100%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}

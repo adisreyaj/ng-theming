@@ -1,0 +1,92 @@
+:host {
+  display: grid;
+  grid-template-rows: 70px 1fr 300px;
+  height: 100vh;
+  background-color: var(--background);
+}
+header {
+  height: 70px;
+  width: 100%;
+  background: var(--secondaryColor);
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  nav ul {
+    display: flex;
+    padding: 0;
+    list-style-type: none;
+    li {
+      padding: 0 1rem;
+    }
+  }
+  a {
+    color: var(--textOnSecondary);
+    text-decoration: none;
+  }
+}
+
+button {
+  background-color: var(--primaryColor);
+  color: var(--textOnPrimary);
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+footer {
+  display: flex;
+  height: 300px;
+  width: 100%;
+  background-color: var(--secondaryColor);
+  color: var(--textOnPrimary);
+  line-height: 1.3;
+
+  ul {
+    display: inline-grid;
+    grid-auto-flow: row;
+    grid-gap: 24px;
+    justify-items: center;
+    margin: auto;
+    list-style: none;
+  }
+
+  @media (min-width: 500px) {
+    ul {
+      grid-auto-flow: column;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--textOnSecondary);
+    box-shadow: inset 0 -1px 0 var(--primaryColor);
+  }
+
+  a:hover {
+    box-shadow: inset 0 -1.2em 0 var(--primaryColor);
+  }
+
+  li:last-child {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  li:hover ~ li p {
+    animation: wave-animation 0.3s infinite;
+  }
+
+  @keyframes wave-animation {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(20deg);
+    }
+    75% {
+      transform: rotate(-15deg);
+    }
+  }
+}
